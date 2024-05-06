@@ -1,0 +1,12 @@
+stages:
+  - check
+
+check1:
+  stage: check
+  image: debian:latest
+  before_script:
+    - apt update
+    - apt install -y fastd python3-minimal
+  script:
+    - ./.check.sh
+    - ./.check.py
